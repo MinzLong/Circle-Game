@@ -1,36 +1,104 @@
-.game-container {
-  text-align: center;
-  margin-top: 20px;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.header {
+.game-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 450px; /* Adjusted size for better layout */
+}
+
+.header h1 {
+  font-size: 32px;
   margin-bottom: 20px;
+  color: #333;
+}
+
+.input-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-container input {
+  padding: 5px;
+  font-size: 16px;
+  width: 60px;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+.time-display {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.start-button:hover:not(:disabled) {
+  background-color: #0056b3;
 }
 
 .circle-container {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
   position: relative;
-  border: 1px solid #000;
+  width: 400px; /* Adjusted size */
+  height: 400px; /* Adjusted size */
+  border: 2px solid #333;
+  margin: 0 auto;
+  background-color: #f7f7f7;
 }
 
 .circle {
-  width: 40px;
-  height: 40px;
-  background-color: #f0f0f0;
+  position: absolute;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  background-color: #17a2b8;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
-  border: 1px solid #000;
+  border: 2px solid #007bff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease;
 }
 
-.all-cleared {
-  margin-top: 20px;
+.circle:hover {
+  transform: scale(1.1);
+}
+
+.game-over, .all-cleared {
   font-size: 24px;
-  color: green;
+  color: red;
+  margin-top: 20px;
 }
